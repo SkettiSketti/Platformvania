@@ -1,0 +1,4 @@
+
+applyFriction()
+limitVelocity()
+move()
