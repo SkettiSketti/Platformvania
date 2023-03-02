@@ -1,8 +1,11 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oLeftSlope",
-  "eventList": [],
+  "name": "oVerticalPlatform",
+  "eventList": [
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":3,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+  ],
   "managed": true,
   "overriddenProperties": [],
   "parent": {
@@ -10,8 +13,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "oStaticWall",
-    "path": "objects/oStaticWall/oStaticWall.yy",
+    "name": "oDynamicPlatform",
+    "path": "objects/oDynamicPlatform/oDynamicPlatform.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -29,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_left_slope",
-    "path": "sprites/s_left_slope/s_left_slope.yy",
+    "name": "s_block",
+    "path": "sprites/s_block/s_block.yy",
   },
   "spriteMaskId": null,
   "visible": true,

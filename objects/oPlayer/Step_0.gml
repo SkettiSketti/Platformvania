@@ -2,7 +2,7 @@ var xDirection =  keyboard_check(vk_right) - keyboard_check(vk_left);
 var jump = keyboard_check_pressed(ord("Z"));
 var shoot = keyboard_check_pressed(ord("X"));
 
-var onTheGround = place_meeting(x,y+1,oWall);
+var onTheGround = place_meeting(x,y+1,oWall) or place_meeting(x,y+2,oWall) or place_meeting(x,y+1,oOneWayPlatform) or place_meeting(x,y+2,oOneWayPlatform);
 
 if (onTheGround)
 {
@@ -19,7 +19,7 @@ if (xDirection != 0) image_xscale = xDirection;
 
 
 vx += xDirection * spd;
-vy += 0.35;
+vy += grv;
 
 
 if (canJump)//(onTheGround)

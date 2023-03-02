@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oLeftSlope",
+  "name": "oStaticWall",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
@@ -10,8 +10,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "oStaticWall",
-    "path": "objects/oStaticWall/oStaticWall.yy",
+    "name": "oWall",
+    "path": "objects/oWall/oWall.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -29,8 +29,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_left_slope",
-    "path": "sprites/s_left_slope/s_left_slope.yy",
+    "name": "s_box_wall",
+    "path": "sprites/s_box_wall/s_box_wall.yy",
   },
   "spriteMaskId": null,
   "visible": true,

@@ -1,7 +1,7 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oLeftSlope",
+  "name": "oOneWayPlatform",
   "eventList": [],
   "managed": true,
   "overriddenProperties": [],
@@ -9,10 +9,7 @@
     "name": "Objects",
     "path": "folders/Objects.yy",
   },
-  "parentObjectId": {
-    "name": "oStaticWall",
-    "path": "objects/oStaticWall/oStaticWall.yy",
-  },
+  "parentObjectId": null,
   "persistent": false,
   "physicsAngularDamping": 0.1,
   "physicsDensity": 0.5,
@@ -29,8 +26,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_left_slope",
-    "path": "sprites/s_left_slope/s_left_slope.yy",
+    "name": "s_ooVertWall",
+    "path": "sprites/s_ooVertWall/s_ooVertWall.yy",
   },
   "spriteMaskId": null,
   "visible": true,
