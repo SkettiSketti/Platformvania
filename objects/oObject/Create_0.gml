@@ -48,7 +48,7 @@ function move()
 			y += vPlatform.vy;
 		}
 			
-		if (blockAbove && vPlatform.vy != 0) //crushed being pushed up
+		if (blockAbove && vPlatform.vy < 0) //crushed being pushed up
 		{
 			instance_create_layer(x,y,"Instances",oStarParticle);
 			instance_destroy();

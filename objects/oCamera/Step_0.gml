@@ -11,6 +11,19 @@ if (keyboard_check_pressed(ord("R")))
 	game_restart();
 }
 
+if (keyboard_check_pressed(ord("F")))
+{
+	if window_get_fullscreen()
+	{
+	    window_set_fullscreen(false);
+	}
+	else
+	{
+	    window_set_fullscreen(true);
+	}
+}
+
+
 var xCam = clamp(lastPosX - wCam/2,0,room_width - wCam);
 var yCam = clamp(lastPosY - hCam/2,0,room_height - hCam);
 
