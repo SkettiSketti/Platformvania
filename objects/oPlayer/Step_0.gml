@@ -37,7 +37,7 @@ if (canJump)//(onTheGround)
 	
 	if (jump)
 	{
-		vy = -6;
+		vy = -3.8;
 	}
 
 	
