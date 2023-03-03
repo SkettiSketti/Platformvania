@@ -1,7 +1,7 @@
 event_inherited();
 maxSpd = 6;
 spd = 6;
-ttl = 7; //time to live
+ttl = 10; //time to live
 
 function checkTTL()
 {

@@ -1,5 +1,4 @@
 event_inherited();
-
 //override
 function applyFriction()
 {

@@ -1,6 +1,7 @@
 spd = 1
 maxSpd = 4
 maxFallSpd = 6;
+maxJumpSpd = 6;
 vx = 0
 vy = 0
 fric = 0.1;
@@ -151,6 +152,8 @@ function limitVelocity()
 	{
 		vy = maxFallSpd;
 	}
+	
+	
 	
 }
 

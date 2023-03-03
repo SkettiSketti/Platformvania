@@ -1,8 +1,10 @@
+
 var xDirection =  keyboard_check(vk_right) - keyboard_check(vk_left);
 var jump = keyboard_check_pressed(ord("Z"));
 var shoot = keyboard_check_pressed(ord("X"));
 
 var onTheGround = place_meeting(x,y+1,oWall) or place_meeting(x,y+2,oWall) or place_meeting(x,y+1,oOneWayPlatform) or place_meeting(x,y+2,oOneWayPlatform);
+
 
 if (onTheGround)
 {

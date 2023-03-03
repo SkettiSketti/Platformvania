@@ -1,5 +1,5 @@
 moveUp = false;
-moveAmount = 30;
+moveAmount = 31;
 waitAmount = 20;
 moveTimer = moveAmount;
 waitTimer = 0;
@@ -14,7 +14,7 @@ function update()
 {
 	if (waitTimer > 0)
 	{
-		show_debug_message("Wait!");
+		//show_debug_message("Wait!");
 		waitTimer--;
 		return;
 	}
