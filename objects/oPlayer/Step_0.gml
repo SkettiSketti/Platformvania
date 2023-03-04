@@ -1,11 +1,12 @@
 
 var xDirection =  keyboard_check(vk_right) - keyboard_check(vk_left);
 var jump = keyboard_check_pressed(ord("Z"));
+var jumpHeld = keyboard_check(ord("Z"));
 var shoot = keyboard_check_pressed(ord("X"));
-
+var jumpReleased = keyboard_check_released(ord("Z"));
 var onTheGround = place_meeting(x,y+1,oWall) or place_meeting(x,y+2,oWall) or place_meeting(x,y+1,oOneWayPlatform) or place_meeting(x,y+2,oOneWayPlatform);
 
-
+//Add coyote time
 if (onTheGround)
 {
 	coyoteTime =  5;
@@ -23,30 +24,43 @@ if (xDirection != 0) image_xscale = xDirection;
 vx += xDirection * spd;
 vy += grv;
 
-
-if (canJump)//(onTheGround)
+if (xDirection != 0)
 {
-	if (xDirection != 0)
-	{
-		sprite_index = blue_cat_walk;
-	}
-	else 
-	{
-		sprite_index = blue_cat_idle;
-	}
-	
-	if (jump)
-	{
-		vy = -3.8;
-	}
-
-	
+	sprite_index = blue_cat_walk;
 }
 else 
 {
 	sprite_index = blue_cat_idle;
 }
 
+
+//variable jump
+if (jumpHeld and vy < 0)
+{
+	grv = 0.08
+}
+else 
+{
+	grv = 0.15
+}
+	
+//jump from ground logic
+if (canJump)
+{
+	
+	if (jump)
+	{
+		vy = -2.5;
+		//vy = -3.8;
+	}
+}
+else 
+{
+	sprite_index = blue_cat_idle;
+}
+
+
+//Shooting logic
 if (shoot)
 {
 	if (keyboard_check(vk_up))
