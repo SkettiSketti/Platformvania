@@ -35,7 +35,6 @@
   "resources": [
     {"id":{"name":"s_left_slope","path":"sprites/s_left_slope/s_left_slope.yy",},},
     {"id":{"name":"TileSet1","path":"tilesets/TileSet1/TileSet1.yy",},},
-    {"id":{"name":"boy_idle","path":"sprites/boy_idle/boy_idle.yy",},},
     {"id":{"name":"oFlyor","path":"objects/oFlyor/oFlyor.yy",},},
     {"id":{"name":"oStaticWall","path":"objects/oStaticWall/oStaticWall.yy",},},
     {"id":{"name":"oFriendlyProjectile","path":"objects/oFriendlyProjectile/oFriendlyProjectile.yy",},},
@@ -59,8 +58,8 @@
     {"id":{"name":"s_projectile_basic","path":"sprites/s_projectile_basic/s_projectile_basic.yy",},},
     {"id":{"name":"oProjectile","path":"objects/oProjectile/oProjectile.yy",},},
     {"id":{"name":"s_ooVertWall","path":"sprites/s_ooVertWall/s_ooVertWall.yy",},},
+    {"id":{"name":"blue_cat_stab","path":"sprites/blue_cat_stab/blue_cat_stab.yy",},},
     {"id":{"name":"s_block","path":"sprites/s_block/s_block.yy",},},
-    {"id":{"name":"boy_walk","path":"sprites/boy_walk/boy_walk.yy",},},
     {"id":{"name":"tileset","path":"sprites/tileset/tileset.yy",},},
     {"id":{"name":"s_right_slope","path":"sprites/s_right_slope/s_right_slope.yy",},},
     {"id":{"name":"s_flyor_hurt","path":"sprites/s_flyor_hurt/s_flyor_hurt.yy",},},

@@ -2,7 +2,7 @@
 var xDirection =  keyboard_check(vk_right) - keyboard_check(vk_left);
 var jump = keyboard_check_pressed(ord("Z"));
 var jumpHeld = keyboard_check(ord("Z"));
-var shoot = keyboard_check_pressed(ord("X"));
+var attack = keyboard_check_pressed(ord("X"));
 var jumpReleased = keyboard_check_released(ord("Z"));
 var onTheGround = place_meeting(x,y+1,oWall) or place_meeting(x,y+2,oWall) or place_meeting(x,y+1,oOneWayPlatform) or place_meeting(x,y+2,oOneWayPlatform);
 
@@ -61,7 +61,7 @@ else
 
 
 //Shooting logic
-if (shoot)
+if (attack)
 {
 	if (keyboard_check(vk_up))
 	{
@@ -80,6 +80,7 @@ if (shoot)
 		projectile = instance_create_layer(x + 10 * sign(image_xscale) ,y,"Instances",oFriendlyProjectile);
 		projectile.vx = sign(image_xscale) * projectile.spd ;
 	}
+	sprite_index = blue_cat_stab;
 }
 
 
