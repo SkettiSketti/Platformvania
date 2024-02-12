@@ -37,11 +37,11 @@ else
 //variable jump
 if (jumpHeld and vy < 0)
 {
-	grv = 0.08
+	grv = 0.16
 }
 else 
 {
-	grv = 0.15
+	grv = 0.30
 }
 	
 //jump from ground logic
@@ -50,7 +50,7 @@ if (canJump)
 	
 	if (jump)
 	{
-		vy = -2.5;
+		vy = -5;
 		//vy = -3.8;
 	}
 }

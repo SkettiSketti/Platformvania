@@ -1,4 +1,3 @@
-
 applyFriction()
 limitVelocity()
 move()

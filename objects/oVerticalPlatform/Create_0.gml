@@ -1,5 +1,5 @@
 moveUp = false;
-moveAmount = 31;
+moveAmount = 63;
 waitAmount = 20;
 moveTimer = moveAmount;
 waitTimer = 0;

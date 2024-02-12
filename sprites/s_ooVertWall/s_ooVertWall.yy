@@ -4,7 +4,7 @@
   "name": "s_ooVertWall",
   "bbox_bottom": 0,
   "bbox_left": 0,
-  "bbox_right": 15,
+  "bbox_right": 31,
   "bbox_top": 0,
   "bboxMode": 2,
   "collisionKind": 1,

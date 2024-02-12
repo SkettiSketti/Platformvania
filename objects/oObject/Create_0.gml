@@ -2,6 +2,7 @@ spd = 1
 maxSpd = 4
 maxFallSpd = 6;
 maxJumpSpd = 6;
+onPlatform = false;
 vx = 0
 vy = 0
 fric = 0.1;
@@ -12,46 +13,54 @@ cy = 0;
 
 function move()
 {
-	var onStaticGround = place_meeting(x,y+1,oStaticWall) or place_meeting(x,y+2,oStaticWall);
+	var onStaticGround = place_meeting(x,y+1,oStaticWall);
 	var blockAbove = place_meeting(x,y-1,oWall);
 	var blockBelow = place_meeting(x,y+1,oWall);
+	var vStaticWallBelow = place_meeting(x,y+1,oStaticWall);
+	var vPlatformAbove = instance_place(x, y-1, oVerticalPlatform);
+	var vPlatformBelow = instance_place(x, y+1, oVerticalPlatform);
+	var vPlatformBelowMovingDown = instance_place(x, y+2, oVerticalPlatform);
+	
+	//Source for basic collision code: https://zackbellgames.com/2014/10/28/understanding-collision-basics/
+	var vxNew, vyNew;
+
 	
 	//hitting bottom of vertical platform
-	var vPlatform = instance_place(x, y-1, oVerticalPlatform);
-	if (vPlatform != noone) //did we hit the bottom of a vertical platform?
+	if (vPlatformAbove != noone) //did we hit the bottom of a vertical platform?
 	{
 		//show_debug_message("I'm under a platform");
-		if (vPlatform.vy > 0) //moving down
+		if (vPlatformAbove.vy > 0) //moving down
 		{
-			show_debug_message("crushed going down");
-			y += vPlatform.spd;
+			y += vPlatformAbove.spd;
 			if (blockBelow)
 			{
+				show_debug_message("oObject: crushed going down");
 				instance_create_layer(x,y,"Instances",oStarParticle);
 				instance_destroy();
 			}
+			
 		}
 		
 	}
 	
 	//on top of vertical-moving platform
-	var vPlatform = instance_place(x, y+2, oVerticalPlatform);
-	if (vPlatform != noone) //did we land on a vertical platform?
+	if (vPlatformBelow != noone) //did we land on a vertical platform?
 	{
 		//show_debug_message("I'm on a platform");
 		
-		if (vPlatform.vy > 0 && onStaticGround)//going down and we're on static ground
+		if (vPlatformBelow.vy > 0 && onStaticGround)//platform is going down and we're on static ground
 		{
 			//do nothing
 		}
 		else
 		{
-			y += vPlatform.vy;
+			y += vPlatformBelow.vy;
 		}
-			
-		if (blockAbove && vPlatform.vy < 0) //crushed being pushed up
+		
+		
+		if (blockAbove && vPlatformBelow.vy < 0) //crushed being pushed up
 		{
-			show_debug_message("crushed going up");
+			show_debug_message("oObject: crushed going up");
 			instance_create_layer(x,y,"Instances",oStarParticle);
 			instance_destroy();
 			
@@ -62,10 +71,14 @@ function move()
 		
 	}
 	
+	//We want to move with a moving platform below us...
+	//if we are not touching any other blocks
+	if ( vPlatformBelowMovingDown != noone && vPlatformBelowMovingDown.vy > 0 && !blockBelow) 
+	{
+		show_debug_message("oObject: movedown");
+		y += vPlatformBelowMovingDown.vy;
+	}
 	
-	//Source for basic collision code: https://zackbellgames.com/2014/10/28/understanding-collision-basics/
-	var vxNew, vyNew;
-
 	// Handle sub-pixel movement
 	
 	//Add velocity to sub pixel acc
@@ -78,8 +91,6 @@ function move()
 	cx -= vxNew;
 	cy -= vyNew;
 
-
-	
 	
 
 	// Vertical
