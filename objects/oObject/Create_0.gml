@@ -23,6 +23,7 @@ function move()
 		//show_debug_message("I'm under a platform");
 		if (vPlatform.vy > 0) //moving down
 		{
+			show_debug_message("crushed going down");
 			y += vPlatform.spd;
 			if (blockBelow)
 			{
@@ -50,6 +51,7 @@ function move()
 			
 		if (blockAbove && vPlatform.vy < 0) //crushed being pushed up
 		{
+			show_debug_message("crushed going up");
 			instance_create_layer(x,y,"Instances",oStarParticle);
 			instance_destroy();
 			
