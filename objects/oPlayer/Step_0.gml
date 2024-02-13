@@ -1,10 +1,12 @@
 
-var xDirection =  keyboard_check(vk_right) - keyboard_check(vk_left);
+var attacking = (alarm[0] > 0)
+var xDirection = (keyboard_check(vk_right) - keyboard_check(vk_left));
 var jump = keyboard_check_pressed(ord("Z"));
 var jumpHeld = keyboard_check(ord("Z"));
 var attack = keyboard_check_pressed(ord("X"));
 var jumpReleased = keyboard_check_released(ord("Z"));
 var onTheGround = place_meeting(x,y+1,oWall) or place_meeting(x,y+2,oWall) or place_meeting(x,y+1,oOneWayPlatform) or place_meeting(x,y+2,oOneWayPlatform);
+var attackCooldown = (alarm[1] > 0)
 
 //Add coyote time
 if (onTheGround)
@@ -37,7 +39,7 @@ else
 //variable jump
 if (jumpHeld and vy < 0)
 {
-	grv = 0.16
+	grv = 0.20
 }
 else 
 {
@@ -50,7 +52,7 @@ if (canJump)
 	
 	if (jump)
 	{
-		vy = -5;
+		vy = -3.9;
 		//vy = -3.8;
 	}
 }
@@ -61,28 +63,38 @@ else
 
 
 //Shooting logic
-if (attack)
+if (attack && !attackCooldown)
 {
-	if (keyboard_check(vk_up))
+	/*
+	if (keyboard_check(vk_up) && !attacking)
 	{
 		projectile = instance_create_layer(x,y,"Instances",oFriendlyProjectile);
 		projectile.vy = -projectile.spd;
 		projectile.image_angle += 90;
 	}
-	else if (keyboard_check(vk_down))
+	else if (keyboard_check(vk_down) && !attacking)
 	{
 		projectile = instance_create_layer(x,y,"Instances",oFriendlyProjectile);
 		projectile.vy = projectile.spd;
 		projectile.image_angle += 90;
 	}
-	else 
+	else
+	*/
+	if (!attacking)
 	{
 		projectile = instance_create_layer(x + 10 * sign(image_xscale) ,y,"Instances",oFriendlyProjectile);
 		projectile.vx = sign(image_xscale) * projectile.spd ;
 	}
-	sprite_index = blue_cat_stab;
+	if (!attacking)
+	{
+		alarm[0] = attackTime;
+	}
 }
 
+if (attacking)
+{
+	sprite_index = blue_cat_stab;
+}
 
 event_inherited();
 

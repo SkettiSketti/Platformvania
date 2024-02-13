@@ -1,10 +1,13 @@
 event_inherited();
 
 
-spd = 1
-maxSpd = 2.5//2.5
+spd = 0.75
+maxSpd = 2//2.5
 maxFallSpd = 10;
 maxJumpSpd = 20;
 fric = 0.1
-grv = 0.30
+grv = 0.45
 coyoteTime = 0
+
+attackTime = 20;
+attackCoolDownTime = 10;

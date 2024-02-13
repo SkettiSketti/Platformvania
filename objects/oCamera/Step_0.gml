@@ -46,8 +46,8 @@ var curX = camera_get_view_x(view_camera[0]);
 var curY = camera_get_view_y(view_camera[0]);
 
 
-var newX = lerp(curX, xCam, 0.025);
-var newY = lerp(curY, yCam, 0.025);
+var newX = lerp(curX, xCam, 0.055);
+var newY = lerp(curY, yCam, 0.055);
 
 
 camera_set_view_pos(view_camera[0],newX,newY);
