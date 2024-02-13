@@ -187,3 +187,8 @@ function applyFriction()
 	
 	*/
 }
+
+function applyGravity()
+{
+	vy += grv;
+}

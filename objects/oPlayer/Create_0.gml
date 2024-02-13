@@ -1,5 +1,6 @@
 event_inherited();
 
+depth = -1000
 
 spd = 0.75
 maxSpd = 2//2.5
@@ -10,4 +11,4 @@ grv = 0.45
 coyoteTime = 0
 
 attackTime = 20;
-attackCoolDownTime = 10;
+attackCoolDownTime = 5;

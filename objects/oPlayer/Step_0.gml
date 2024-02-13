@@ -1,6 +1,6 @@
 
 var attacking = (alarm[0] > 0)
-var xDirection = (keyboard_check(vk_right) - keyboard_check(vk_left));
+var xDirection = !attacking*(keyboard_check(vk_right) - keyboard_check(vk_left));
 var jump = keyboard_check_pressed(ord("Z"));
 var jumpHeld = keyboard_check(ord("Z"));
 var attack = keyboard_check_pressed(ord("X"));
@@ -82,7 +82,7 @@ if (attack && !attackCooldown)
 	*/
 	if (!attacking)
 	{
-		projectile = instance_create_layer(x + 10 * sign(image_xscale) ,y,"Instances",oFriendlyProjectile);
+		projectile = instance_create_layer(x + 10 * sign(image_xscale) ,y+2,"Instances",oFriendlyProjectile);
 		projectile.vx = sign(image_xscale) * projectile.spd ;
 	}
 	if (!attacking)
