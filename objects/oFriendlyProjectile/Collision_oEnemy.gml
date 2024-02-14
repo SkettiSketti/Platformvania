@@ -1,3 +1,4 @@
+
 other.hurt();
 other.hp--;
 
@@ -9,7 +10,7 @@ else
 {
 	other.vx -= 3;
 }
-other.vy -= 3;
 
+other.vy -= 3;
 
 instance_destroy();

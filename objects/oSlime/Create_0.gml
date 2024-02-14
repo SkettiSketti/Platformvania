@@ -1,6 +1,6 @@
 event_inherited();
 
-spd = 0.15
+spd = 0.12
 maxSpd = 4;
 grv = 0.10;
 hp = 100
@@ -21,7 +21,8 @@ function doSlimeThings(){
 		alarm[0] = 120;
 	}
 	//Move toward player
-	if (instance_exists(oPlayer))
+	/*
+	if (instance_exists(oPlayer) && !isHurt())
 	{
 		if (abs(oPlayer.x - x) > 2 && distance_to_object(oPlayer) < 240 && hurtTimer <= 0)
 		{
@@ -35,6 +36,7 @@ function doSlimeThings(){
 			}
 		}
 	}
+	*/
 	
 	if (hurtTimer > 0)
 	{

@@ -11,6 +11,11 @@ grv = 0.35
 cx = 0;
 cy = 0;
 
+function onGround()
+{
+	return (place_meeting(x,y+1,oWall) or instance_place(x, y+1, oVerticalPlatform) or instance_place(x, y+1, oOneWayPlatform))
+}
+
 function move()
 {
 	var onStaticGround = place_meeting(x,y+1,oStaticWall);
