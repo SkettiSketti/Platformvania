@@ -40,27 +40,29 @@ function flickerWhenHurt()
 {
 	if (hurtTimer > 0)
 	{
-		//wait for flicker timer to run out
-		if (flickerTimer > 0)
+		
+		if (!flicker)
 		{
-			flickerTimer--;
+			image_blend =make_colour_rgb(255, 255, 255);
+			if (flickerTimer <= 0)
+			{
+				flicker = true;
+				flickerTimer = flickerFrames;
+			}
 		}
 		else 
 		{
-			if (!flicker)
+			image_blend = make_colour_hsv(0, 0, 0);
+			if (flickerTimer <= 0)
 			{
-				image_blend =make_colour_rgb(255, 255, 255);
-				flicker = true;
-			}
-			else 
-			{
-				image_blend = make_colour_hsv(0, 0, 0);
 				flicker = false;
+				flickerTimer = flickerFrames;
 			}
 		}
 		
 		
 		hurtTimer--;
+		flickerTimer--;
 	}
 	
 	animateHurt();
