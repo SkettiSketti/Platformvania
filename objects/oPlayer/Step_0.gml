@@ -1,7 +1,7 @@
 
 var attacking = (alarm[0] > 0)
 var duck = keyboard_check(vk_down);
-var xDirection = !duck*!attacking*(keyboard_check(vk_right) - keyboard_check(vk_left));
+var xDirection = /*!isHurt()**/!duck*!attacking*(keyboard_check(vk_right) - keyboard_check(vk_left));
 var jump = keyboard_check_pressed(ord("Z"));
 var jumpHeld = keyboard_check(ord("Z"));
 var attack = keyboard_check_pressed(ord("X"));

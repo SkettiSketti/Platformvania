@@ -1,10 +1,10 @@
 {
   "resourceType": "GMObject",
   "resourceVersion": "1.0",
-  "name": "oFriendlyHurtBox",
+  "name": "oSnakeStatic",
   "eventList": [
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"oEnemy","path":"objects/oEnemy/oEnemy.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
-    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"oSnakeStatic","path":"objects/oSnakeStatic/oSnakeStatic.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,},
+    {"resourceType":"GMEvent","resourceVersion":"1.0","name":"","collisionObjectId":{"name":"oPlayer","path":"objects/oPlayer/oPlayer.yy",},"eventNum":0,"eventType":4,"isDnD":false,},
   ],
   "managed": true,
   "overriddenProperties": [],
@@ -13,8 +13,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "oHurtBox",
-    "path": "objects/oHurtBox/oHurtBox.yy",
+    "name": "oEnemy",
+    "path": "objects/oEnemy/oEnemy.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,
@@ -32,8 +32,8 @@
   "properties": [],
   "solid": false,
   "spriteId": {
-    "name": "s_hurt_box",
-    "path": "sprites/s_hurt_box/s_hurt_box.yy",
+    "name": "s_snake_green",
+    "path": "sprites/s_snake_green/s_snake_green.yy",
   },
   "spriteMaskId": null,
   "visible": true,

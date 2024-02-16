@@ -165,11 +165,16 @@ function limitVelocity()
 		vx = sign(vx) * maxSpd;
 	}
 	
-	//note: only for falling downwards
 	if (vy > maxFallSpd)
 	{
 		vy = maxFallSpd;
 	}
+	
+	if (vy < -maxFallSpd)
+	{
+		vy = -maxFallSpd;
+	}
+	
 	
 	
 	

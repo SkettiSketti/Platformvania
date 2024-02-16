@@ -4,12 +4,15 @@ flickerFrames = 2;
 flickerTimer = flickerFrames;
 hurtTimer = 0;
 
+knockUp = 3;
+knockBack = 3;
+
 event_inherited();
 
 function hurt()
 {
 	aggro = true;
-	hurtTimer = 45; //We are hurt
+	hurtTimer = 30; //We are hurt
 }
 
 function isHurt()

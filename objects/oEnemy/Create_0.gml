@@ -6,7 +6,7 @@ flickerTimer = flickerFrames;
 
 function checkIfDefeated()
 {
-	if (hp < 0)
+	if (hp <= 0)
 	{
 		instance_destroy();
 	}

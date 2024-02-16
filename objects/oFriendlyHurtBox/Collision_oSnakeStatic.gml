@@ -1,9 +1,7 @@
-
 if (!other.isHurt())
 {
 	other.hurt();
 	other.hp--;
-	other.vy -= owner.knockUp;
 }
 
 if (owner.x < other.x)
