@@ -1,7 +1,4 @@
 hp = 10;
-flicker = false;
-flickerFrames = 2;
-flickerTimer = flickerFrames;
 hurtTimer = 0;
 
 knockUp = 3;
@@ -43,7 +40,6 @@ function flickerWhenHurt()
 {
 	if (hurtTimer > 0)
 	{
-		
 		if (!flicker)
 		{
 			image_blend =make_colour_rgb(255, 255, 255);
@@ -62,10 +58,9 @@ function flickerWhenHurt()
 				flickerTimer = flickerFrames;
 			}
 		}
-		
+		flickerTimer--;
 		
 		hurtTimer--;
-		flickerTimer--;
 	}
 	
 	animateHurt();

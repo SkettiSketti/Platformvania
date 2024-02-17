@@ -40,7 +40,6 @@ if (xDirection != 0)
 	xCam = clamp(lastPosX- wCam/2 + (xDirection * 64),0,room_width - wCam);
 }
 
-show_debug_message(yCam);
 
 var curX = camera_get_view_x(view_camera[0]);
 var curY = camera_get_view_y(view_camera[0]);

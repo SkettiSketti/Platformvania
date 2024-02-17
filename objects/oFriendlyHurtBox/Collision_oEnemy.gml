@@ -1,10 +1,11 @@
 
 if (!other.isHurt())
 {
+	other.vy -= owner.knockUp;
 	other.hurt();
 	other.hp--;
-	other.vy -= owner.knockUp;
 }
+
 
 if (owner.x < other.x)
 {

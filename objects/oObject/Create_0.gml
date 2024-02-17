@@ -3,6 +3,10 @@ maxSpd = 4
 maxFallSpd = 6;
 maxJumpSpd = 6;
 onPlatform = false;
+bouncy = false;
+flicker = false;
+flickerFrames = 2;
+flickerTimer = flickerFrames;
 vx = 0
 vy = 0
 fric = 0.1;
@@ -111,8 +115,15 @@ function move()
 			else 
 				y += sign(vyNew); 
 	    else {
-	        vy = 0;
-	        break;
+			if (bouncy)
+			{
+				vy = -vy*0.90; 
+			}
+			else 
+			{
+				vy = 0;
+			}
+			break;
 	    }
 	}
 
@@ -201,4 +212,29 @@ function applyFriction()
 function applyGravity()
 {
 	vy += grv;
+}
+
+function doFlicker()
+{
+	
+	if (!flicker)
+	{
+		image_blend =make_colour_rgb(255, 255, 255);
+		if (flickerTimer <= 0)
+		{
+			flicker = true;
+			flickerTimer = flickerFrames;
+		}
+	}
+	else 
+	{
+		image_blend = make_colour_hsv(0, 0, 0);
+		if (flickerTimer <= 0)
+		{
+			flicker = false;
+			flickerTimer = flickerFrames;
+		}
+	}
+	flickerTimer--;
+		
 }
