@@ -7,20 +7,20 @@ if (instance_exists(oPlayer) && !isHurt())
 	{
 		vy -= 3;
 	}
-	vx += sign(oPlayer.x - x) *  random_range(6,8);
+	
+	if (floor(random_range(0,2)) == 0 && !onGround()) //Mini hop sometimes
+	{
+		vx += sign(oPlayer.x - x) *  random_range(6,10);
+	}
 	
 	//Move to player
-	if ( abs(oPlayer.x - x) > 2 &&  distance_to_object(oPlayer) < 120)
+	if ( abs(oPlayer.x - x) > 2 &&  inProximityOfPlayer() && onGround())
 	{
-		if (oPlayer.x < x)
-		{
-			vx -= 5;
-		}
-		else if (oPlayer.x > x)
-		{
-			vx += 5;
-		}
+		vx += sign(oPlayer.x - x) *  random_range(6,10);
 	}
+	
+	
+	
 }
 alarm[0] = random_range(15,80)
 show_debug_message("oSlime: Jump!")
