@@ -72,3 +72,8 @@ function flickerWhenHurt()
 		
 	}
 }
+
+function inProximityOfPlayer()
+{
+	return (instance_exists(oPlayer) && distance_to_object(oPlayer) < 160)
+}

@@ -9,10 +9,7 @@ function checkIfDefeated()
 {
 	if (hp <= 0)
 	{ 
-		for (var i = 0; i < coinsDropped; i++)
-		{
-			instance_create_layer(x,y,"Instances",oCoin);
-		}
+		throwCoins(coinsDropped);
 		instance_destroy();
 	}
 }
@@ -27,10 +24,6 @@ function animateHurt()
 	//Override
 }
 
-function throwCoins()
-{
-	
-}
 
 
 

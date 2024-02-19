@@ -4,6 +4,7 @@ maxFallSpd = 6;
 maxJumpSpd = 6;
 onPlatform = false;
 bouncy = false;
+horizontalBounce = false;
 flicker = false;
 flickerFrames = 2;
 flickerTimer = flickerFrames;
@@ -110,7 +111,14 @@ function move()
 			//if we're falling and not touching the platform and the platform is below us
 			if (vyNew > 0 and !place_meeting(x,y,oOneWayPlatform) and place_meeting(x,y+1,oOneWayPlatform))
 			{
-				vy = 0;
+				if (bouncy)
+				{
+					vy = -vy*0.90; 
+				}
+				else 
+				{
+					vy = 0;
+				}
 			}
 			else 
 				y += sign(vyNew); 
@@ -153,7 +161,14 @@ function move()
 	    if (!place_meeting(x + sign(vxNew), y, oWall))
 	        x += sign(vxNew); 
 	    else {
-	        vx = 0;
+			if (bouncy)
+			{
+				vx = -vx*0.90; 
+			}
+			else 
+			{
+				vx = 0;
+			}
 	        break;
 	    }
 	}

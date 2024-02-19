@@ -16,9 +16,7 @@ function update(){
 
 function doFrogThings()
 {
-	
-	
-	if (onGround())
+	if (inProximityOfPlayer() && onGround() && vy >= 0)
 	{
 		if (instance_exists(oPlayer))
 		{
@@ -32,10 +30,16 @@ function doFrogThings()
 			}
 		}
 		vy -= 3;
+	}
+	
+	if (onGround())
+	{
 		sprite_index = s_frog_idle;
 	}
 	else 
 	{
 		sprite_index = s_frog_jump;
 	}
+	
+	
 }
