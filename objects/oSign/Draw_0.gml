@@ -3,6 +3,6 @@
 draw_self();
 if (draw)
 {
-	draw_text_color(other.x-8*(string_length(message)/2), other.y-16, message, c_white,c_white,c_white,c_white, 1);
+	draw_text_color(x-8*(string_length(text)/2), y-16, text, c_white,c_white,c_white,c_white, 1);
 }
 
