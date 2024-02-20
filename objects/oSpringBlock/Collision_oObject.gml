@@ -7,6 +7,10 @@ if (!animating)
 	animating = true;
 }
 
-other.vy -= 8
-image_speed = 1
+if (other.vy > 0)
+{
+	other.vy = 0;
+	other.vy -= 8
+	image_speed = 1
+}
 

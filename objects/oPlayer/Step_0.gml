@@ -118,6 +118,7 @@ if (attack && !attackCooldown && !isHurt())
 	}
 	if (!attacking)
 	{
+		audio_play_sound(sndHit1,10,false);
 		alarm[0] = attackTime;
 	}
 }

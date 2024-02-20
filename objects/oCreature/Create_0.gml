@@ -10,6 +10,8 @@ function hurt()
 {
 	aggro = true;
 	hurtTimer = 30; //We are hurt
+	
+	audio_play_sound(sndHit3,10,false);
 }
 
 function isHurt()

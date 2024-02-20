@@ -3,6 +3,7 @@ flicker = false;
 flickerFrames = 2;
 flickerTimer = flickerFrames;
 coinsDropped = 8
+hurtTimer = 10
 
 
 function checkIfDefeated()

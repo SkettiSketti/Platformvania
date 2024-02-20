@@ -4,7 +4,7 @@
 if (!opened)
 {
 	sprite_index = s_chest_open
-	throwCoins(100);
+	throwCoins(20);
 	opened = true
 }
 

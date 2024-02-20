@@ -7,4 +7,5 @@ if (global.keys > 0)
 		instance_create_layer(x+random_range(-8, 8),y+random_range(-8, 8),"Instances",oStarParticle);
 	instance_destroy()
 	global.keys--;
+	audio_play_sound(sndBoom1,10,false);
 }
