@@ -1,0 +1,1 @@
+global.keys = 0;

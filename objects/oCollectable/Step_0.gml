@@ -1,0 +1,2 @@
+applyGravity()
+move();

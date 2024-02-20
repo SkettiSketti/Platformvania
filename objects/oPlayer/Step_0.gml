@@ -77,7 +77,14 @@ if (canJump)
 }
 else 
 {
-	sprite_index = blue_cat_idle;
+	if (onGround())
+	{
+		sprite_index = blue_cat_idle;
+	}
+	else 
+	{
+		sprite_index = blue_cat_jump;
+	}
 }
 
 

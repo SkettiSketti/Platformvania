@@ -15,8 +15,8 @@
     "path": "folders/Objects.yy",
   },
   "parentObjectId": {
-    "name": "oObject",
-    "path": "objects/oObject/oObject.yy",
+    "name": "oCollectable",
+    "path": "objects/oCollectable/oCollectable.yy",
   },
   "persistent": false,
   "physicsAngularDamping": 0.1,

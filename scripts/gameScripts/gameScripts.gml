@@ -13,3 +13,9 @@ function throwNCoins(px,py,amount){
 		instance_create_layer(px,py,"Instances",oCoin);
 	}
 }
+
+function throwKey()
+{
+	var key = instance_create_layer(x,y-16,"Instances",oKey);
+	key.vy -= 4;
+}
